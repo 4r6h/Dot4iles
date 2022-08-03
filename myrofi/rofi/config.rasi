@@ -1,0 +1,8 @@
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+configuration {
+ modi: "window,drun,ssh,combi";
+ font: "hack 13";
+ combi-modi: "window,drun,ssh";
+ show-icons: true; 
+ icon-theme: "Papirus";
+ }
