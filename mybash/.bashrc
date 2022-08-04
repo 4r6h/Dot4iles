@@ -6,8 +6,8 @@
 [[ $- != *i* ]] && return
 
 # Add bash aliases.
-if [ -f ~/aliases_4r6h ]; then
-    source ~/aliases_4r6h
+if [ -f ~/.aliases_4r6h ]; then
+    source ~/.aliases_4r6h
 fi
 
 #csr
