@@ -3,15 +3,22 @@
 while true
 
 do
+sleep 1
+	echo "Write user's full name like this: Rahat, RAHAT, Rahat_Hossain"
+sleep 1
+	echo "If you want to give space between words then type your name like this: Rahat Hossain"
+sleep 1
+		read -p "Enter new user's full name: " Full_Name
+wait 
+	echo "Write your user name in all lower caps and (Do Not Add Spaces) like: rahat, rahat_hossain"
+sleep 1
+		read -p "Enter new username: " New_Username
+wait
+	echo "Example: bash, zsh, fish"
 
-read -p "Enter new user's full name: " Full_Name
-read -p "Enter new username: " New_Username
+		read -p "Define new user's Default Shell: " Default_Shell
 
-echo "Example: bash, zsh, fish"
-
-read -p "Define new user's Default Shell: " Default_Shell
-
-if grep -q $New_Username "/etc/passwd";
+if grep -q $New_Username "/etc/passwd"; [ -d /home/$New_Username ]; [ -d /home/$Full_Name ];
 
 then 
     echo "User Exist"
