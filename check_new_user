@@ -1,33 +1,41 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 while true
 
 do
-sleep 1
-	echo "Write user's full name like this: Rahat, RAHAT, Rahat_Hossain"
-sleep 1
-	echo "If you want to give space between words then type your name like this: Rahat Hossain"
-sleep 1
-		read -p "Enter new user's full name: " Full_Name
-wait 
-	echo "Write your user name in all lower caps and (Do Not Add Spaces) like: rahat, rahat_hossain"
-sleep 1
-		read -p "Enter new username: " New_Username
-wait
-	echo "Example: bash, zsh, fish"
 
-		read -p "Define new user's Default Shell: " Default_Shell
+sleep 1
+
+echo "Write user's full name like this: Rahat, RAHAT, Rahat_Hossain"
+
+sleep 1
+
+echo "If you want to give space between words then type your name like this: Rahat Hossain"
+
+sleep 1
+	read -p "Enter new user's full name: " Full_Name
+wait
+
+echo "Write your user name in all lower caps and (Do Not Add Spaces) like: rahat, rahat_hossain"
+
+	read -p "Enter new username: " New_Username
+wait
+	read -s -p "Enter new user's password: " User_Password
+
+echo "Example: bash, zsh, fish"
+
+	read -p "Define new user's Default Shell: " Default_Shell
 
 if grep -q $New_Username "/etc/passwd"; [ -d /home/$New_Username ]; [ -d /home/$Full_Name ];
 
-then 
-    echo "User Exist"
+	then
+    		echo "User Exist"
 
-else
+	else
     
-sudo useradd -g users -G sudo -s /bin/$Default_Shell -m -d /home/"$Full_Name" $New_Username
+sudo useradd -g users -G sudo -s /usr/bin/$Default_Shell -c "$Full_Name" -m -d /home/"$Full_Name" -p $User_Password $New_Username
 cat /etc/passwd | grep $New_Username; echo "$New_Username's new user created"
-    break
+   break
 fi
 
 done

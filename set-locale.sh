@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "LC_ALL=en_US.UTF-8" | sudo tee -a /etc/environment
 echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen

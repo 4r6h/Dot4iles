@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # first run xrandr -q 
 
 # you should see output like, <DVI-0 connected 1680x1050+0+0 (normal left inverted right x axis y axis) 473mm x 296mm> or if you are in virtual machine as I am. You should see Virtual1 connected 1680x1050+0+0 (normal left inverted right x axis y axis) 473mm x 296mm

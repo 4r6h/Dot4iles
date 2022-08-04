@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 paru -S --noconfirm sddm sddm-theme-sugar-candy-git
 wait
 sudo systemctl enable sddm
