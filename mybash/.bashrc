@@ -48,6 +48,7 @@ alias vsddm="sudo vim /etc/sddm.conf"
 ###For COLORSCRIPT###
 alias cs="colorscript"
 alias csr="colorscript random"
+#csr
 colorscript -e awk-rgb-test
 echo "WELLCOME TO RAHAT'S BASH CONIG"
 
