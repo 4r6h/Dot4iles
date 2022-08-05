@@ -62,6 +62,7 @@ cat /etc/passwd | grep $New_Username; echo "$Full_Name's new user $New_Username 
 	break
 fi
 done
+	exit
                   ;;
 		 [02]|[2])
 while true
@@ -82,6 +83,7 @@ break
 fi
 
 done
+	exit
 		  ;;
 	  	 [03]|[3])
 	exit

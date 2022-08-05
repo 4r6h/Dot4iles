@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+while true 
+
+do 
+
+	echo "Example: bash, zsh, fish"
+
+read -r -p "
+ Write the name of you shell: " shell
+
+if [[ "$shell" != "bash" && "$shell" != zsh && "$shell" != fish ]]; then 
+	echo "invalid name...."
+elif [ -f "/bin/$shell" ]; then
+	echo "shell found"
+else 
+	echo "shell not found"
+fi
+done
