@@ -4,6 +4,12 @@ while true
 
 do
 
+if [ ! -d /opt/backup ]; then
+
+sudo mkdir /opt/backup
+
+else
+
 echo
 	echo "01 Are You Want to Add a User then type 1"
 
@@ -36,10 +42,9 @@ echo
 echo
         read -p "Enter new username: " New_Username
 
-if grep -q $New_Username "/etc/passwd"; [ -d /home/$New_Username ]; [ -d /home/$Full_Name ];
-
-        then
-                echo "User or Home Directory Exist"
+if grep -q $New_Username "/etc/passwd"; [ -d /home/$New_Username ]; [ -d /home/$Full_Name ]; then
+            
+	echo "User or Home Directory Exist"
 
         else
 
@@ -94,9 +99,9 @@ read -r -p "Type yes or no then enter : " Del
 case $Del in
 			[yY][eE][sS]|[yY])
 	
-		sudo userdel $Del_User 
-		sudo userdel $Del_Full_User
-		sudo rm -rf /home/$Del_User /home/$Del_Full_User
+		sudo deluser --backup-to /opt/backup --remove-home --remove-all-files "$Del_User" 
+		#sudo deluser "$Del_Full_User"
+		#sudo rm -rf /home/"$Del_User" /home/"$Del_Full_User"
 		echo "$Del_Full_User's User $Del_User Deleted"
 		;;
 			[nN][oO]|[nN])
@@ -118,5 +123,6 @@ break && exit
             *)
                   echo "Invalid input..."
                   ;;
-      esac      
+      esac
+fi      
 done
