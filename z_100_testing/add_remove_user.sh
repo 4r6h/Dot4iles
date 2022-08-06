@@ -111,23 +111,7 @@ else
         echo "user does not exist"
 fi
 done
-
-#if [ -f $(cat /etc/passwd | grep -I "^$Del_User\|$Del_Full_User") ]
-
-#[[ -d "/home/$Del_User" || -d "/home/$Del_Full_User" ]];
-
-#	then
-#		sudo userdel $Del_User $Del_Full_User
-#		sudo rm -rf /home/$Del_User /home/$Del_Full_User
-#		echo "$Del_Full_User's User $Del_User Deleted"
-#break
-#	else
-#		echo "User Not Found"
-#fi
-#
-#done
-#	exit
-		  ;;
+	  ;;
 	  	 [03]|[3])
 break && exit
                   ;;
