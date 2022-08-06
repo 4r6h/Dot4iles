@@ -14,7 +14,8 @@ read -r -p "
 if [[ "$shell" != "bash" && "$shell" != zsh && "$shell" != fish ]]; then 
 
 echo	
-	echo "invalid name.... type exactly like: bash or zsh"
+	echo "invalid shell name.... type exactly like: bash or zsh"
+	echo "Warning! This is case sensitive"
 echo
 
 elif [ -f "/bin/$shell" ]; then
@@ -30,7 +31,7 @@ else
 clear
 
 echo 
-	echo "shell not found"
+	echo "shell not found. $shell is not installed in your computer"
 echo
 
 fi
