@@ -1,0 +1,4 @@
+sudo tar -cpzf filename #create a tar.gz
+
+sudo tar -xpzf filename #extract a tar.gz
+

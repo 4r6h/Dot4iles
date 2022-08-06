@@ -76,11 +76,16 @@ sudo usermod -aG games $New_Username
 sudo usermod -aG wheel $New_Username
 
 cat /etc/passwd | grep $New_Username; echo "$Full_Name's new user $New_Username created"
+	break && exit
 fi
+		break && exit
 	done
+
+			break && exit
 		fi
+				break && exit
 			done
-break && exit
+					break && exit
                   ;;
 		 [02]|[2])
 while true
@@ -103,6 +108,7 @@ case $Del in
 		#sudo deluser "$Del_Full_User"
 		#sudo rm -rf /home/"$Del_User" /home/"$Del_Full_User"
 		echo "$Del_Full_User's User $Del_User Deleted"
+break && exit
 		;;
 			[nN][oO]|[nN])
 break && exit
