@@ -84,19 +84,20 @@ do
 	
 	read -r -p "Write the user's full name you want to delete! : " Del_Full_User
 
+if id "$Del_User" >/dev/null 2>&1; then
+        echo "user exists"
 echo "Do you want to delete this user"
 echo
 cat /etc/passwd | grep -I "^$Del_User\|$Del_Full_User"
 echo
-read -r -p "Type yes or no then enter :" Del
+read -r -p "Type yes or no then enter : " Del
 case $Del in
-	[yY][eE][sS]|[yY])
+			[yY][eE][sS]|[yY])
 	
 		sudo userdel $Del_User 
 		sudo userdel $Del_Full_User
 		sudo rm -rf /home/$Del_User /home/$Del_Full_User
 		echo "$Del_Full_User's User $Del_User Deleted"
-
 		;;
 			[nN][oO]|[nN])
 break && exit
@@ -105,9 +106,11 @@ break && exit
 				echo "Invalid input..."
 		;;
       esac      
-done
 
-break && exit
+else
+        echo "user does not exist"
+fi
+done
 
 #if [ -f $(cat /etc/passwd | grep -I "^$Del_User\|$Del_Full_User") ]
 

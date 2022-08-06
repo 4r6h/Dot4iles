@@ -3,16 +3,35 @@ while true
 
 do 
 
+echo
+	echo "Write the name of you shell"
+
 	echo "Example: bash, zsh, fish"
 
 read -r -p "
- Write the name of you shell: " shell
+ Choose an option : " shell
 
 if [[ "$shell" != "bash" && "$shell" != zsh && "$shell" != fish ]]; then 
-	echo "invalid name...."
+
+echo	
+	echo "invalid name.... type exactly like: bash or zsh"
+echo
+
 elif [ -f "/bin/$shell" ]; then
+
+clear
+
+echo	
 	echo "shell found"
-else 
+echo
+
+else
+
+clear
+
+echo 
 	echo "shell not found"
+echo
+
 fi
-done
+	done
