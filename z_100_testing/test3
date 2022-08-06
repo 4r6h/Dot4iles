@@ -1,0 +1,15 @@
+#!/bin/bash
+while true
+do
+read -r -p "Write your name : " name
+
+if [[ $name == [upper] ]];
+then
+    echo "Username should be in lowercase"
+elif [[ $name == [a-z] ]];
+then
+    echo "done"
+else 
+    echo "Don't use digit"
+fi
+done

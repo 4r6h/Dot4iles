@@ -1,7 +1,27 @@
 #!/bin/bash
+#
+#if id "$1" >/dev/null 2>&1; then
+#        echo "user exists"
+#else
+#        echo "user does not exist"
+#fi
+#
+#!/usr/bin/bash
+#        echo -n "Please enter yes or no (y/n)?"
+#        read yesno
+#        yesno="$yesno | tr '[A-Z]' '[a-z]'"
+#        echo $yesno
+#
+while read -r -p "Write your username: " u; do
 
-if id "$1" >/dev/null 2>&1; then
-        echo "user exists"
-else
-        echo "user does not exist"
-fi
+#input="$input | tr [:upper:] [:lower:]"
+
+input="[$u | ${tr[A-Z][a-z]}]"
+#
+#	if id "$input" >/dev/null 2>&1; then
+#        	echo "user exists"
+#	else
+#        	echo "user does not exist"
+#	fi
+echo "$input"
+done
