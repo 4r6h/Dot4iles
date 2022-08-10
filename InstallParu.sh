@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ ! -f /bin/paru* ]; then
+if [ ! -f /bin/paru* ]; [ ! -f /usr/bin/paru* ]; then
 	sudo pacman -S --noconfirm --needed git base base-devel
 	git clone https://aur.archlinux.org/paru.git
 	cd paru
