@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ ! -x /bin/paru* ]; [ ! -x /usr/bin/paru* ]; then
+InstallParu() {
 	sudo pacman -S --noconfirm --needed git base base-devel
 	git clone https://aur.archlinux.org/paru.git
 	cd paru
@@ -9,6 +9,11 @@ echo"-------------------------------------"
 echo"-----------Paru Installed------------"
 echo"-------------------------------------"
 	rm -rf paru
+}
+
+if [ ! -x /bin/paru* ]; [ ! -x /usr/bin/paru* ]; then
+	
+	InstallParu
 else 
 	echo "Paru is already installed"
 fi
