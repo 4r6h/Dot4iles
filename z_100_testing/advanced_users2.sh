@@ -56,11 +56,11 @@ do
 read -r -p "
  Write the name of you shell: " Default_Shell
 
-if [[ "$Default_Shell" != "bash" && "$Default_Shell" != zsh && "$Default_Shell" != fish ]]; then 
+if [[ "$Default_Shell" != "bash" && "$Default_Shell" != zsh && "$Default_Shell" != fish && "$Default_Shell" != fish ]]; then 
 
 	echo "invalid name...."
 
-elif [ ! -f "/bin/$Default_Shell" ]; then
+elif [ ! -x "/bin/$Default_Shell" ]; then
 	echo "$Default_Shell not installed in your computer. shell not found"
 
 else 
@@ -106,7 +106,7 @@ echo
 		case $Del in
 		[yY][eE][sS]|[yY])
 	
-		sudo deluser --backup-to /opt/backup --remove-home "$Del_User" 
+		sudo deluser --backup-to /opt/backup --remove-home --remove-all-files "$Del_User" 
 		echo "$Del_Full_User's User $Del_User Deleted"
 break && exit
 		;;

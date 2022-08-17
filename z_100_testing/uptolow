@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+#sed -r 's/\<\([[:lower:]]\)\([^[:punct:]]*\)/\u\1\2/g'
+
+#tr "[A-Z]" "[a-z]" | sed "s/\( \|^\)\(.\)/\1\u\2/g"
+
+car='rahat hosSain Is a Good Boy'
+
+#
+#
+#capitalize=$( echo $car | sed -r 's/\<./\U&/g' )
+#
+#capitalize=$( echo $car | )
+
+#capitalize=$( echo $car | tr "[A-Z]" "[a-z]" | sed -e "s/\b./\u\0/g" )
+#
+#capitalize=$( echo $car | tr "[A-Z]" "[a-z]" | sed -r 's/\<./\U&/g' )
+
+capitalize=$( echo $car | awk 'BEGIN{split("a is the to at in on with and but or",w); for(i in w)nocap[w[i]]}function cap(word){return toupper(substr(word,1,1)) tolower(substr(word,2))}{for(i=1;i<=NF;++i){printf "%s%s",(i==1||i==NF||!(tolower($i) in nocap)?cap($i):tolower($i)),(i==NF?"\n":" ")}}' )
+
+
+echo $capitalize

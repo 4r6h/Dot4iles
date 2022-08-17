@@ -1,38 +1,87 @@
 #!/usr/bin/env bash
-while true 
+#while true 
+#
+#do 
+#
+#echo
+#	echo "Write the name of you shell"
+#
+#	echo "Example: bash, zsh, fish"
+#
+#read -r -p "
+# Choose an option : " shell
+#
+#if [[ "$shell" != "bash" && "$shell" != zsh && "$shell" != fish ]]; then 
+#
+#echo	
+#	echo "invalid shell name.... type exactly like: bash or zsh"
+#	echo "Warning! This is case sensitive"
+#echo
+#
+#elif [ -f "/bin/$shell" ]; then
+#
+#clear
+#
+#echo	
+#	echo "shell found"
+#echo
+#
+#else
+#
+#clear
+#
+#echo 
+#	echo "shell not found. $shell is not installed in your computer"
+#echo
+#
+#fi
+#	done
 
-do 
+shell="bash"
+list() {
+	awk -F "/" '/^\// {print $NF}' /etc/shells | sort | uniq | grep ^$shell
+}
+list
 
-echo
-	echo "Write the name of you shell"
+#while true 
+#
+#do 
+#	
+#
+#	echo
+#	echo "Write the name of you shell"
+#
+#	echo "Example: bash, zsh, fish"
+#
+#read -r -p "
+# Choose an option : " shell
+#
+#if [[ "$shell" != "bash" && "$shell" != zsh && "$shell" != fish ]]; then 
+#
+#echo	
+#	echo "invalid shell name.... type exactly like: bash or zsh"
+#	echo "Warning! This is case sensitive"
+#echo
+#
+#elif [ $s = "$shell" ]; then
+#
+#clear
+#
+#echo	
+#	echo "shell found"
+#echo
+#
+#else
+#
+#clear
+#
+#echo 
+#	echo "shell not found. $shell is not installed in your computer"
+#echo
+#
+#fi
+#	done
 
-	echo "Example: bash, zsh, fish"
+#(awk -F "/" '/^\// {print $NF}' /etc/shells | sort | uniq | grep ^$shell)
 
-read -r -p "
- Choose an option : " shell
-
-if [[ "$shell" != "bash" && "$shell" != zsh && "$shell" != fish ]]; then 
-
-echo	
-	echo "invalid shell name.... type exactly like: bash or zsh"
-	echo "Warning! This is case sensitive"
-echo
-
-elif [ -f "/bin/$shell" ]; then
-
-clear
-
-echo	
-	echo "shell found"
-echo
-
-else
-
-clear
-
-echo 
-	echo "shell not found. $shell is not installed in your computer"
-echo
-
-fi
-	done
+#awk -F "/" '/^\// {print $NF}' /etc/shells | sort | uniq
