@@ -42,6 +42,7 @@ alias vsddm="sudo vim /etc/sddm.conf"
 ###For COLORSCRIPT###
 alias cs="colorscript"
 alias csr="colorscript random"
+
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
