@@ -3,6 +3,7 @@
 ob="$HOME/old_backups/"
 obr="$HOME/old_backups/rofi"
 cr="$HOME/.config/rofi"
+conf="$HOME/.config"
 
 theme1=(
 'https://raw.githubusercontent.com/4r6h/Dot4iles/main/myrofi/rofi/config.rasi'
@@ -20,7 +21,7 @@ if [ -d $cr ]; then
 		mv $cr $ob
 fi
 
-if [ ! -d ~/.config ]; then
+if [ ! -d $conf ]; then
 	mkdir -P $cr
 fi
 

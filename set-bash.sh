@@ -39,31 +39,40 @@ configs=(
 
 
 if [ ! -d $ob ]; then
+
 	mkdir $ob
 else
 	if [ -f $ob/.bashrc ]; then
+
 		rm $ob/.bashrc
 	fi
 
 	if [ -f $ob/.Xresources ]; then
+
 		rm $ob/.Xresources
 	fi
 
 	if [ -f $ob/.aliases_4r6h ]; then
+
 		rm $ob/.aliases_4r6h
 	fi
 fi
 
 
 for conf in "${confs[@]}"; do
+
 	if [ -f $conf ]; then
+
 		echo -e "\n${BRed}MOVING ${BGreen}old $conf to ${BRed}$ob${Off}"
+
 		mv $conf $ob
 	fi
 done
 
 
 for config in "${configs[@]}"; do
+
 	echo -e "\n${BGreen}DOWNLOADING NEW configs from \n${BYellow}$config \n${BRed}and moving configs to ${BBlue}$HOME${Off}"
+
 	wget -cqP $HOME $config
 done
