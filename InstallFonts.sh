@@ -12,15 +12,15 @@ echo"-------------------------------------"
 }
 
 fonts() {
+	sudo pacman -S sudo tar fontconfig wget --noconfirm --needed
 	paru -S --needed --noconfirm nerd-fonts-jetbrains-mono ttf-ms-fonts ttf-ubuntu-font-family ttf-roboto ttf-roboto-mono
-	wget -c -q --no-check-certificate https://raw.githubusercontent.com/fahadahammed/linux-bangla-fonts/master/font.sh -O font.sh
+	wget --no-check-certificate https://raw.githubusercontent.com/4r6h/linux-fonts/master/Arch-font.sh -O font.sh
 	chmod +x font.sh
 	bash font.sh
 	rm font.sh
 }
 
-if [ ! -x /bin/paru* ]; [ ! -x /usr/bin/paru* ]; then
-	
+if [ ! -x /bin/paru*  -o  ! -x /usr/bin/paru* ]; then
 	InstallParu
 	fonts
 else

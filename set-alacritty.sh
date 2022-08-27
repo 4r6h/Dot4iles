@@ -1,33 +1,37 @@
 #!/usr/bin/env bash
 
+dir="$HOME/.config/alacritty"
+oba="$HOME/old_backups/alacritty"
+ob="$HOME/old_backups"
+conf="$HOME/.config"
+
 set-alacritty() {
 
-mkdir -P $HOME/.config/alacritty/
+mkdir -p $dir
+sudo pacman -Sy --noconfirm --needed wget alacritty
 
-paru -Sy --noconfirm --needed wget alacritty
+wget -cqP $dir https://raw.githubusercontent.com/4r6h/Dot4iles/main/AlacrittyConfig/alacritty.yml
 
-wget https://raw.githubusercontent.com/4r6h/Dot4iles/main/AlacrittyConfig/alacritty.yml
-
-wget https://raw.githubusercontent.com/dracula/alacritty/master/dracula.yml
-
-mv -u alacritty.yml dracula.yml $HOME/.config/alacritty/
+wget -cqP $dir https://raw.githubusercontent.com/dracula/alacritty/master/dracula.yml
 
 }
 
-if [ ! -d ~/old_backups ]; then
-	mkdir ~/old_backups
+if [ -d $dir ]; then
 
-elif [ ! -d ~/.config ]; then
-	mkdir ~/.config
+	if [ ! -d $ob ]; then
+		mkdir $ob
+	fi
 
-elif [ -d ~/.config/alacritty ]; then
-	mv ~/.config/alacritty ~/old_backups/
-
-else
-	set-alacritty
-
+	if [ -d $oba ]; then
+		rm -rf $oba
+	fi
 fi
 
+if [ -d $dir ]; then
+	mv $dir $ob
+fi
 
-
-
+if [ ! -d $conf ]; then
+	mkdir $conf
+fi
+	set-alacritty

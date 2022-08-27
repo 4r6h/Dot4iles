@@ -11,8 +11,8 @@ echo"-------------------------------------"
 	rm -rf paru
 }
 
-if [ ! -x /bin/paru* ]; [ ! -x /usr/bin/paru* ]; then
-	
+if [ ! -x /bin/paru*  -o  ! -x /usr/bin/paru* ]; then
+
 	InstallParu
 else 
 	echo "Paru is already installed"

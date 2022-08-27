@@ -1,0 +1,50 @@
+#________________________________
+#
+#	Arc theme
+#________________________________
+
+arc-gtk-theme
+arc-solid-gtk-theme
+kvantum-theme-arc
+arc-icon-theme
+
+#________________________________
+#
+#	Dracula theme
+#________________________________
+
+dracula-gtk-theme
+ant-dracula-kvantum-theme-git
+dracula-icons-git
+dracula-cursors-git
+#________________________________
+
+#________________________________
+#
+#	Whitesur theme
+#________________________________
+
+whitesur-gtk-theme-git
+whitesur-kde-theme-git
+whitesur-icon-theme-git
+whitesur-cursor-theme-git
+#________________________________
+
+#________________________________
+#
+#     Extra Cursor themes
+#________________________________
+
+vimix-cursors
+sweet-cursors-theme-git
+#________________________________
+
+#________________________________
+#
+#     Extra Icon themes
+#________________________________
+
+candy-icons-git
+sweet-folders-icons-git
+#________________________________
+
