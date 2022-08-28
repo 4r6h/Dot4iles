@@ -48,3 +48,12 @@ candy-icons-git
 sweet-folders-icons-git
 #________________________________
 
+#________________________________
+#
+#    Theme changing utility
+#________________________________
+
+lxappearance
+kvantum
+gnome-tweaks
+#________________________________
